@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-def islower(c):
-    a = ord(c)
-    if a >= 65 and a < 90:
-        return False
-    elif a >= 97 and a <= 122:
-        return True
+for count in range(0, 10):
+    for a in range(1, 10):
+        if count >= a:
+            continue
+        if count == 8 and a == 9:
+            print("{}{}".format(count, a))
+        else:
+            print("{}{}".format(count, a), end=", ")
