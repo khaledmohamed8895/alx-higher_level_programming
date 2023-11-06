@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * is_palindrome - function check if a singly linked list is a palindrome.
@@ -9,36 +7,24 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr = *head;
-	listint_t *temp = *head;
-	listint_t *prev = NULL;
-	listint_t *next;
-
-	if (!head || !*head || !(*head)->next)
+	if (head == NULL || *head == NULL)
 		return (1);
+	return (aux_palind(head, *head));
+}
 
-	while (temp != NULL && temp->next != NULL)
+/**
+ * aux_palind - function to know if is paldeo.
+ * @head: head of list
+ * @end: last of list
+ */
+int aux_palind(listint_t **head, listint_t *end)
+{
+	if (end == NULL)
+		return (1);
+	if (aux_palind(head, end->next) && (*head)->n == end->n)
 	{
-		temp = temp->next->next;
-		next = ptr->next;
-		ptr->next = prev;
-		prev = ptr;
-		ptr = next;
+		*head = (*head)->next;
+		return (1);
 	}
-
-	if (temp != NULL)
-	{
-		ptr = ptr->next;
-	}
-
-	while (prev != NULL && ptr != NULL)
-	{
-		if (prev->n != ptr->n)
-			return (0);
-
-		prev = prev->next;
-		ptr = ptr->next;
-	}
-
-	return (1);
+	return (0);
 }
