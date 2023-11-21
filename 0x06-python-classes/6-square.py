@@ -44,7 +44,7 @@ class Square:
 
     def area(self):
         """area of a square"""
-        return self.size**2
+        return self.size ** 2
 
     def my_print(self):
         """print an empty line"""
@@ -52,8 +52,6 @@ class Square:
             print()
             return
         """print a square of # in position"""
-        print(
-            ("\n" * self.position[1])
-            + ((" " * self.position[0]) + ("#" * self.size + "\n")) * self.size,
-            end="",
-        )
+        print(("\n" * self.position[1]) +
+              ((" " * self.position[0]) +
+               ("#" * self.size + "\n")) * self.size, end="")
