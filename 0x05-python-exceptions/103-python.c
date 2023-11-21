@@ -5,6 +5,7 @@
 
 /**
  * print_python_list
-*/
+ */
 void print_python_list(PyObject *p)
-{}
+{
+}
