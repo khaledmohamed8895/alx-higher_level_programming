@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-MyList = __import__("1-my_list").MyList
+'''Module for MyList class.'''
 
-my_list = MyList()
-my_list.append(1)
-my_list.append(4)
-my_list.append(2)
-my_list.append(3)
-my_list.append(5)
-print(my_list)
-my_list.print_sorted()
-print(my_list)
+
+class MyList(list):
+    '''Custom MyList class.'''
+    def print_sorted(self):
+        '''Method for printing sorted list.'''
+        print(sorted(self))
