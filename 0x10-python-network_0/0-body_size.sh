@@ -1,3 +1,3 @@
 #!/bin/bash
-#Bash script takes in a URL, sends a request to that URL
-curl -s $1 | wc -c
+# bash script that takes in a URL, sends a get request to the URL,displays the body of the response
+curl -sL "$1"
