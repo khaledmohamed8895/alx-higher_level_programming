@@ -1,20 +1,17 @@
-#!/usr/bin/python3
-"""........."""
+"""Find the peak"""
 
-def find_peak(list_of_integers):
-    """......."""
-    if not list_of_integers:
+
+def find_peak(arr):
+    """Return the peak with O(n)"""
+    if len(arr) == 0 or arr is None:
         return None
 
-    low = 0
-    high = len(list_of_integers) - 1
+    peak = arr[0]
+    n = len(arr)
 
-    while low < high:
-        mid = (low + high) // 2
+    for i in range(n):
+        if i != 0 and i != n-1 and arr[i-1] <= arr[i] >= arr[i+1]:
+            if arr[i] > peak:
+                peak = arr[i]
 
-        if list_of_integers[mid] < list_of_integers[mid + 1]:
-            low = mid + 1
-        else:
-            high = mid
-
-    return list_of_integers[low]
+    return peak
