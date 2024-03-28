@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 def find_peak(list_of_integers):
-    """......."""
+    """ find_peak
+
+    Args:
+        list_of_integers (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     if not list_of_integers:
         return None
 
